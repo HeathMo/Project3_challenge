@@ -20,4 +20,4 @@ We created a website to help show where ufo sightings have occurred around the w
 - [Felicia Felix](https://github.com/Felicia620)
 - [Heather Mott](https://github.com/HeathMo)
 - [Peta-Gaye Lysius](https://github.com/petagaye2001)
-- [Ryan Flammia](https://github.com/flammia-py)
+- [Ryan Flammia](https://github.com/rflammia-py)
