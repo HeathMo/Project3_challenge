@@ -1,0 +1,47 @@
+  h1{
+    font-size: 80px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: left;
+    padding: 10px;
+    margin: 10px, 0px, 0px, 10px;
+  }
+
+  h3{
+    font-size: 50px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: left;
+    padding: 10px;
+    margin: 10px, 0px, 0px, 10px; 
+  }
+  
+  
+  p{
+    font-size: 20px;
+    color: rgb(193, 255, 47);
+    background-color: rgba(128, 128, 128, 0.137);
+    text-align: left;
+  }
+  
+  .divbdy{
+    padding: 10px;
+  }
+  
+  body {
+    background-image: url('images/alien.png');
+    background-color: #cccccc
+  }
+
+  
+  .navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+  }
+  
+  @media(max-width:767px){}
+  
+  .navbar{
+    padding: inherit;
+  }
