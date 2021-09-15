@@ -30,6 +30,12 @@ The team reviewed multiple datasets and selected a primary source to work with f
 
 [Kaggle UFO CSV](https://www.kaggle.com/NUFORC/ufo-sightings)
 
+## ERD and Database
+
+The team then created an ERD for the database:
+
+![ERD](images/ERD_v2.png)
+
 ## **Status** 
 
 ## CURRENTLY UNDER CONSTRUCTION 
