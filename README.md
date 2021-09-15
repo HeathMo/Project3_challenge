@@ -28,7 +28,7 @@ The team obtained data pertaining to UFO sightings in the form of a `csv file` a
 
 The team reviewed multiple datasets and selected a primary source to work with for the UFO sightings visualizations:
 
-[Data World UFO CSV](https://data.world/timothyrenner/ufo-sightings)
+[Kaggle UFO CSV](https://www.kaggle.com/NUFORC/ufo-sightings)
 
 ## **Status** 
 
