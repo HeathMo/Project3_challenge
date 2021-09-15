@@ -11,7 +11,7 @@ In order to demonstrate our skills acquired for data cleaning and coding, we cre
 - [Data Cleaning](#data-cleaning)
     - [Sources](#sources)
 - [Status](#status)
--[YouTube Video](#youtube-video)
+- [YouTube Video](#youtube-video)
 - [Team Members](#team-members)
 
 ## Data Cleaning
