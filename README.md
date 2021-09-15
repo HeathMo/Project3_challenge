@@ -1,9 +1,5 @@
 # Where the Wild Things Are - Out of This World?
 
-Topic: UFOs 
-
-Objective: Obtain, clean, organize, and visualize data regarding UFO sightings.
-
 ![alien](images/flying_saucer.png)
 
 ## **Background**
