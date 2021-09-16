@@ -43,4 +43,13 @@ SELECT state, ROUND(SUM("duration (seconds)"),0)
 FROM ufo_sightings
 GROUP BY state
 ORDER BY SUM("duration (seconds)") DESC;
+
+-- To get the valid dates use this type of code 
+SELECT datetime 
+FROM ufo_sightings
+WHERE datetime LIKE '%/%'
+AND TO_DATE(datetime,'MM/DD/YYYY') >= '01/01/2000';
+
 */
+
+
