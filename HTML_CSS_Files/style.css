@@ -1,0 +1,44 @@
+body {
+  background: url(images/background3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.nav-item {
+  font-size: 25px;
+}
+
+.image1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-radius: 50%;
+}
+
+.container {
+  background-color: lightgrey;
+  color: black;
+  border-radius: 20px 20px 20px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 70px;
+  color: rgb(185, 169, 169);
+  text-shadow: 3px 3px rgb(104, 255, 104);
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.graphs {
+  color: white;
+}
