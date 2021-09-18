@@ -28,6 +28,7 @@ Step 1
         - Aligned on dropping ~ 10K lines of data as there was missing city, state in the file 
         - Validated that there was no missing empty cells in the dataset
         - Re-established a new index count of the data 
+        - update repo with CSV with 4 digit year vs 2 digit year.  The data structure was needed in order to complete the DB queries 
     
     
 
