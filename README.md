@@ -19,18 +19,18 @@ We created a website to help show where ufo sightings have occurred around the w
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Q60mSMmhTZU/0.jpg)](https://www.youtube.com/watch?v=Q60mSMmhTZU)
 
 Step 1 
-     -Identified UFO Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size
-    - Established CSV file and loaded on the group repo
-    - Define Dependecies via jupyter notebook
-    - Cleaned Data 
-        - Dropped 2 columns as they were not required in the data set (duration (hours/min), date posted)
-        - Aligned on dropping ~ 10K lines of data as there was missing city, state in the file 
-        - Validated that there was no missing empty cells in the dataset
-        - Re-established a new index count of the data 
-        - update repo with CSV with 4 digit year vs 2 digit year.  The data structure was needed in order to complete the DB queries 
-    - Aligned including Word cloud and included the following library in the virtual enviornment ( !pip install wordcloud   )
-           - conda install -c conda-forge wordcloud
-           - Saved with WordCloud PNG files
+    identified UFO Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size   
+    Established CSV file and loaded on the group repo
+    Define Dependecies via jupyter notebook
+        Cleaned Data 
+        Dropped 2 columns as they were not required in the data set (duration (hours/min), date posted)
+        Aligned on dropping ~ 10K lines of data as there was missing city, state in the file    
+        Validated that there was no missing empty cells in the dataset
+        Re-established a new index count of the data 
+        update repo with CSV with 4 digit year vs 2 digit year.  The data structure was needed in order to complete the DB queries 
+        Aligned including Word cloud and included the following library in the virtual enviornment ( !pip install wordcloud   )
+            conda install -c conda-forge wordcloud
+                Saved with WordCloud PNG files
          
            
            
