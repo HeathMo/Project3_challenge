@@ -2,14 +2,13 @@
 
 Topic: UFOs 
 
-Objective: Obtain, clean, organize, visualize data regarding UFO & Bigfoot sightings.
+Objective: Obtain, clean, organize, visualize data regarding UFO 
 
 ![alien](images/flying_saucer.png)
 
 
 We created a website to help show where ufo sightings have occurred around the world.
 
-## CURRENTLY UNDER CONSTRUCTION 
 
 **YouTube Declassified Navy UFO Video**
 
@@ -20,7 +19,7 @@ We created a website to help show where ufo sightings have occurred around the w
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Q60mSMmhTZU/0.jpg)](https://www.youtube.com/watch?v=Q60mSMmhTZU)
 
 Step 1 
-     -Identified UFO & BIGFOOT Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size
+     -Identified UFO Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size
     - Established CSV file and loaded on the group repo
     - Define Dependecies via jupyter notebook
     - Cleaned Data 
@@ -32,11 +31,9 @@ Step 1
     - Aligned including Word cloud and included the following library in the virtual enviornment ( !pip install wordcloud   )
            - conda install -c conda-forge wordcloud
            - Saved with WordCloud PNG files
-           /Users/petagaye/Desktop/DSCloned/Project3_challenge/word_cloud_first_review.png
+         
            
            
-           
-           /Users/petagaye/Desktop/Screen Shot 2021-09-19 at 7.38.08 PM.png
 
 ### Team Members
 - [Byron Pineda](https://github.com/byronpineda225)
