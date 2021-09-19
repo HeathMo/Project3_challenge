@@ -29,10 +29,14 @@ Step 1
         - Validated that there was no missing empty cells in the dataset
         - Re-established a new index count of the data 
         - update repo with CSV with 4 digit year vs 2 digit year.  The data structure was needed in order to complete the DB queries 
-    
-    
-
-
+    - Aligned including Word cloud and included the following library in the virtual enviornment ( !pip install wordcloud   )
+           - conda install -c conda-forge wordcloud
+           - Saved with WordCloud PNG files
+           /Users/petagaye/Desktop/DSCloned/Project3_challenge/word_cloud_first_review.png
+           
+           
+           
+           /Users/petagaye/Desktop/Screen Shot 2021-09-19 at 7.38.08 PM.png
 
 ### Team Members
 - [Byron Pineda](https://github.com/byronpineda225)
