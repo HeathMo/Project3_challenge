@@ -1,47 +1,72 @@
-  h1{
-    font-size: 80px;
-    font-weight: bold;
-    color: whitesmoke;
-    text-align: left;
-    padding: 10px;
-    margin: 10px, 0px, 0px, 10px;
-  }
+body {
+  background: url(images/background3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-  h3{
-    font-size: 50px;
-    font-weight: bold;
-    color: whitesmoke;
-    text-align: left;
-    padding: 10px;
-    margin: 10px, 0px, 0px, 10px; 
-  }
-  
-  
-  p{
-    font-size: 20px;
-    color: rgb(193, 255, 47);
-    background-color: rgba(128, 128, 128, 0.137);
-    text-align: left;
-  }
-  
-  .divbdy{
-    padding: 10px;
-  }
-  
-  body {
-    background-image: url('images/alien.png');
-    background-color: #cccccc
-  }
+.nav-item {
+  font-size: 25px;
+}
 
-  
-  .navbar{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 40px;
-  }
-  
-  @media(max-width:767px){}
-  
-  .navbar{
-    padding: inherit;
-  }
+.image1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-radius: 50%;
+}
+
+.image2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.container {
+  background-color: lightgrey;
+  color: black;
+  border-radius: 20px 20px 20px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 70px;
+  color: rgb(185, 169, 169);
+  text-shadow: 3px 3px rgb(104, 255, 104);
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  padding-top: 5px;
+}
+
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  padding-top: 5px;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.graphs {
+  color: white;
+}
+
+.divbdy{
+  padding: 10px;
+}
