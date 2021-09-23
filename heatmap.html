@@ -18,17 +18,15 @@
 
         <div id="map" class="vh-100 vw-100 bg-near-white"></div>
       
-        <div id="legend" class="bg-white fixed top-0 left-0 pa2 mt2 ml2 br1 o-90" style="z-index: 999; width: 380px">
-          <h1 class="f3 mt0">UFO Sightings</h1>
         </div>
       
         <script>
       
           var map = L.map('map', {
            
-            center: [40.730610, -73.935242], // Initial map center
-            zoom: 6, // Initial zoom level
-            attributionControl: false, // Instead of default attribution, we add custom at the bottom of script
+            center: [39.8, -98.3], // Initial map center
+            zoom: 5, // Initial zoom level
+            attriutionControl: false,
             
           })
       
@@ -42,16 +40,22 @@
             maxZoom: 19
           }).addTo(map)
       
-          // Add geographical labels only layer on top of baselayer
+          // Add geographical labels 
           var labels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19,
             pane: 'shadowPane'  // always display on top
           }).addTo(map)
+          
+          
+          
+
+          
+
       
           // Read data from CSV file
-          $.get('./data.csv', function(csvString) {
+          $.get('./data/coordinates.csv', function(csvString) {
       
             
             var data = Papa.parse(csvString.trim()).data.filter(
@@ -63,9 +67,8 @@
             // Add all points into a heat layer
             var heat = L.heatLayer(data, {
               radius: 15,
-              minOpacity: .5,
-              max: 1.0,
-              gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+              minOpacity: 0.50,
+              gradient: {0.4: 'blue', 0.55: 'lime', 1: 'red'}
             })
       
             // Add the heatlayer to the map
@@ -74,21 +77,9 @@
           $.get('/Users/ryan/Desktop/Project3_challenge/ufo-markers.csv ', function(csvString) {
 
             
-            var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
-
-            // For each row in data, create a marker and add it to the map
-            // For each row, columns `Latitude`, `Longitude`, and `Title` are required
-            for (var i in data) {
-            var row = data[i];
-
-            var marker = L.marker([row.Latitude, row.Longitude], {
-                opacity: 1
-            }).bindPopup(row.Title);
-            
-            marker.addTo(map);
-            }
-
-});
+            var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data; 
+          
+          });
       
           // Add custom attribution
           L.control.attribution({
