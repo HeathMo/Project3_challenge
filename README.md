@@ -30,11 +30,40 @@ The team reviewed multiple datasets and selected a primary source to work with f
 
 [Kaggle UFO CSV](https://www.kaggle.com/NUFORC/ufo-sightings)
 
-## ERD and Database
+## ERD and SQL Database
 
 The team then created an ERD for the database:
 
 ![ERD](images/ERD_v2.png)
+
+Using PostgreSQL, several queries were created including:
+
+1. Sightings per country
+2. Top 20 states in the US with the most sightings
+3. Top 5 shapes per country
+
+## HTML, CSS, JavaScript, JSON, Flask
+
+The team created multiple `html` files to create webpages to visualize the queries as well as a heatmap relative to UFO sightings.
+
+*Image of files in VS Code
+
+![code](images/....)
+
+Pages included are:
+- Home page
+- Heatmap
+- Global information
+- United States specific information
+- Miscellaneous information
+
+## Heatmap
+
+Using Leaflet, a map with markers and a heatmap was created to show locations of UFO sightings.  Refer to images below.
+
+NOTE: The team learned that the 66+K data points were too many to actually run and so an assessment was completed to balance the abundance of data and the viewer experience.  The end result was to use 1500 sightings to map.
+
+![map](images....)
 
 ## **Status** 
 
@@ -53,3 +82,7 @@ The team then created an ERD for the database:
 - [Heather Mott](https://github.com/HeathMo)
 - [Peta-Gaye Lysius](https://github.com/petagaye2001)
 - [Ryan Flammia](https://github.com/rflammia-py)
+
+## Quotes
+- 'Stare and compare'
+- 'Latest and greatest'
