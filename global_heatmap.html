@@ -143,6 +143,9 @@ p {
 <div id="map" class="vh-100 vw-100 bg-near-white"></div>
       
 </div>
+<script src="/static/js/global.js"></script>
+
+<script src="/static/json/GLOBAL.json"></script>
 <script>
     var map = L.map('map', {
            
@@ -171,32 +174,28 @@ p {
          }).addTo(map)
      
          // Read data from CSV file
-         $.get('./Data/coordinates.csv', function(csvString) {
+         $.get('Data/coordinates.csv', function(csvString) {
       
             
-      var data = Papa.parse(csvString.trim()).data.filter(
-        function(row) { return row.length === 2 }
-      ).map(function(a) {
-        return [ parseFloat(a[0]), parseFloat(a[1]) ]
+        var data = Papa.parse(csvString.trim()).data.filter(
+          function(row) { return row.length === 2 }
+        ).map(function(a) {
+          return [ parseFloat(a[0]), parseFloat(a[1]) ]
+        })
+
+        // Add all points into a heat layer
+        var heat = L.heatLayer(data, {
+          radius: 15,
+          minOpacity: 0.50,
+          gradient: {0.4: 'blue', 0.55: 'lime', 1: 'red'}
+        })
+
+        // Add the heatlayer to the map
+        heat.addTo(map)
       })
 
-      // Add all points into a heat layer
-      var heat = L.heatLayer(data, {
-        radius: 15,
-        minOpacity: 0.50,
-        gradient: {0.4: 'blue', 0.55: 'lime', 1: 'red'}
-      })
 
-      // Add the heatlayer to the map
-      heat.addTo(map)
-    })
-    $.get('/Data/ufo-markers.csv ', function(csvString) {
-
-      
-      var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data; 
     
-    });
-
     // Add custom attribution
     L.control.attribution({
       prefix: '<a href="https://github.com/HandsOnDataViz/leaflet-heatmap">View data and code</a> \
@@ -205,5 +204,5 @@ p {
 
 </script>
 <!-- /<script src="/app.py"></script> -->
-  </body>
+</body>
 </html>
