@@ -1,0 +1,22 @@
+name: HerokuDeploy
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - click
+  - dnspython
+  - Flask
+  - Flask-SQLAlchemy
+  - itsdangerous
+  - Jinja2
+  - MarkupSafe
+  - psycopg2
+  - pymongo
+  - SQLAlchemy
+  - Werkzeug
+  - wincertstore
+  - pip
+  - pip:
+    - gunicorn
