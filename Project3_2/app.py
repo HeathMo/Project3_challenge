@@ -148,25 +148,25 @@ def get_shapes_data_from_db():
     ##########################################################################
 
 
-@app.route("/templates/index.html")
+@app.route("/index.html")
 def index():
     print("responding to home route: ", datetime.datetime.now())
 
     return render_template("index.html")
 
-@app.route("/templates/united_states.html")
+@app.route("/united_states.html")
 def united_states():
     print ("responding to charts route: ", datetime.datetime.now())
 
     return render_template("united_states.html")
 
-@app.route("/templates/global.html")
+@app.route("/global.html")
 def canada():
     print ("responding to charts route: ", datetime.datetime.now())
 
     return render_template("global.html")
 
-@app.route("/templates/misc.html")
+@app.route("/misc.html")
 def miscellaneous():
     print ("responding to charts route: ", datetime.datetime.now())
 
