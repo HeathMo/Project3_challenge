@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Project 3 - Option 1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <link rel="icon" href="/static/image/logo1.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    
+
+    
+    <style>
+
+      body {
+  background: url(/static/images/background3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.nav-item {
+  font-size: 25px;
+}
+
+.image1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-radius: 50%;
+}
+
+.container {
+  background-color: lightgrey;
+  color: black;
+  border-radius: 20px 20px 20px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 70px;
+  color: rgb(185, 169, 169);
+  text-shadow: 3px 3px rgb(104, 255, 104);
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.graphs {
+  color: white;
+}
+
+.col-centered{
+  float:none;
+  margin: 0 auto;
+}
+
+#bubble{
+ text-align: center;
+}
+
+body { margin:0; padding:0; }
+    #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+    
+    .custom-popup .leaflet-popup-content-wrapper {
+    background:#24850cb0;
+    color:#fff;
+    font-size:16px;
+    font-family: OCR A Std, monospace;
+    line-height:24px;
+    }
+  .custom-popup .leaflet-popup-content-wrapper a {
+    color:rgba(0, 252, 0, 0.89);
+    }
+  .custom-popup .leaflet-popup-tip-container {
+    width:30px;
+    height:15px;
+    }
+  .custom-popup .leaflet-popup-tip {
+    border-left:15px solid transparent;
+    border-right:15px solid transparent;
+    border-top:15px solid #2c3e50;
+    }
+    </style>
+  </head>
+  
+<body>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="{{url_for('static', filename = 'images/logo1.png')}}" alt="Logo" style="width: 70px" />
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/global_heatmap.html">GLOBAL HEATMAP</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SIGHTINGS
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/united_states.html">United States(US)🇺🇸</a></li>
+            <li><a class="dropdown-item" href="/global.html">Global🌎</a></li>
+            
+            <!-- <li><a class="dropdown-item" href="/templates/great_britain.html">Great Britain(GB)🇬🇧</a></li>
+            <li><a class="dropdown-item" href="/templates/australia.html">Australia(AU)🇦🇺</a></li> -->
+          </ul>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" href="/misc.html">MISC.</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br/>
+    <h1 class="graphs">UNITED STATES</h1>
+    <h3></h3>
+    <br />
+    <br />
+    <div class="container" id="main">
+      <br />
+      <br />
+
+       <div class="row">
+      
+        <div class="col-md-5 col-centered">
+          <div id="map"> US SIGHTINGS </div>
+        </div>
+        <br/>
+        <br/>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <!-- <div class="row">
+        <div class="col-md-12 col-centered">
+          <div id="bubble"> PLACEHOLDER FOR BUBBLE CHART</div>
+        </div>
+      </div> -->
+      <br/>
+      <br/>
+    </div>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+</br>
+<p>Project 3 - Wild Things Team</p>
+<!-- <script src="/static/js/united_states.js"></script>
+<script src="/static/json/UNITED_STATES.json"></script> -->
+
+<div id="map" class="vh-100 vw-100 bg-near-white"></div>
+
+<script src="/static/js/global.js"></script>
+<script src="/static/json/GLOBAL.json"></script>
+<div id="map"></div>
+
+ 
+  <script>
+
+  // Set up initial map center and zoom level
+  var map = L.map('map', {
+    center: [40.57, -74.86], 
+    zoom: 9, 
+    scrollWheelZoom: false,
+    tap: false
+  });
+
+  /* Control panel to display map layers */
+  var controlLayers = L.control.layers( null, null, {
+    position: "topright",
+    collapsed: false
+  }).addTo(map);
+
+  // display  basemap tiles 
+  var light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+  }).addTo(map);
+  controlLayers.addBaseLayer(light, 'Carto Light basemap');
+
+  // </script>
+
+  // <script>
+
+  
+
+
+  var alienIcon = L.icon({
+        iconUrl: 'https://www.svgrepo.com/show/11723/alien-head.svg',
+        iconSize: [20, 20], // size of the icon
+        popupAnchor: [0,-10]
+        });
+  // Read markers data from data.csv
+  $.get("Project3_2/Data/datamarkers.csv", function(csvString) {
+
+    // Use PapaParse to convert string to array of objects
+    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data; 
+
+    // For each row in data, create a marker and add it to the map
+    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    const popupOptions = {
+    className: "custom-popup"
+                        };
+    for (var i in data) {
+      var row = data[i];
+
+      var marker = L.marker([row.Latitude, row.Longitude],{
+        opacity: 1,
+        icon: alienIcon
+      }).bindPopup("Shape: " + row.shape + " " + "City: " + row.city + " " + "Date & Time: " + row.datetime + " ", popupOptions)
+      ;
+      
+      marker.addTo(map);
+    }
+    
+
+
+  });
+
+  map.attributionControl.setPrefix(
+    'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
+  );
+
+  </script>
+</body>
+</html>
