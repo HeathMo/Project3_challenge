@@ -26,8 +26,8 @@ Upon review with the instructor, determined the best path forward would be to dr
 - Reset the index of the dataframe to convert to a `csv file` for use in a relational database
 
 Samples
-![pic 4](images/UFO_Jupternotebook_samples.png)
-![pic 4](images/WORDCLOUD.png)
+![pic 1](images/UFO_Jupternotebook_samples.png)
+![pic 4](images/Wordcloud.png)
 
 
 
