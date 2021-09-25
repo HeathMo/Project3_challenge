@@ -19,15 +19,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/css/style.css" />
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <link rel="icon" href="/static/image/logo1.png">
+    
     <style>
       body {
   background: url(/static/images/background3.png) no-repeat center center fixed;
@@ -36,9 +31,11 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 .nav-item {
   font-size: 25px;
 }
+
 .image1 {
   display: block;
   margin-left: auto;
@@ -46,11 +43,13 @@
   width: 20%;
   border-radius: 50%;
 }
+
 .container {
   background-color: lightgrey;
   color: black;
   border-radius: 20px 20px 20px 20px;
 }
+
 h1 {
   text-align: center;
   font-weight: bold;
@@ -59,17 +58,40 @@ h1 {
   color: rgb(185, 169, 169);
   text-shadow: 3px 3px rgb(104, 255, 104);
 }
+
 p {
   text-align: center;
   font-weight: bold;
   color: white;
 }
+
 .graphs {
   color: white;
 }
+
+  .col {
+    text-align: center;
+  }
+
+  #front_page{
+    font-size: 30px;
+  }
+
+  #front_page img{
+    border-radius: 50%;
+  }
+
+   #front_page:hover{
+    color: limegreen;
+    border-style: dotted;
+    transition-timing-function:ease-in;
+  }
     </style>
   </head>
-<body class="helvetica">
+
+
+  
+<body>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <img src="{{url_for('static', filename = 'images/logo1.png')}}" alt="Logo" style="width: 70px" />
@@ -91,46 +113,58 @@ p {
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="/united_states.html">United States</a></li>
             <li><a class="dropdown-item" href="/global.html">Global🌎</a></li>
-            <!-- <li><a class="dropdown-item" href="/templates/great_britain.html">Great Britain(GB):gb:</a></li>
-            <li><a class="dropdown-item" href="/templates/australia.html">Australia(AU):flag-au:</a></li> -->
+            
+            <!-- <li><a class="dropdown-item" href="/templates/great_britain.html">Great Britain(GB)🇬🇧</a></li>
+            <li><a class="dropdown-item" href="/templates/australia.html">Australia(AU)🇦🇺</a></li> -->
           </ul>
         </li>
-       <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/misc.html">MISC.</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-   <br />
     <br />
     <br />
     <br />
+    <br />
+    <img class="image1" src="{{url_for('static', filename = 'video/mematicMeme.GIF')}}"/>
     <br />
     <br/>
-    <h1 class="graphs">GLOBAL INFORMATION</h1>
+    <h1>UFO SIGHTINGS</h1>
     <h3></h3>
     <br />
     <br />
     <div class="container" id="main">
       <br />
       <br />
-      <h2></h2>
-      <div id="my-chart">
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
+      <br/>
+      <br/>
+      <div class="row row-cols-2">
+    <div class="col" id="front_page">UNITED STATES
+      <br/>
+      <a href="united_states.html" target="_blank">
+        <img src="/static/images/us.png" width="275">
+      </a>
     </div>
     <br/>
     <br/>
-</div>
+    <br/>
+    <br/>
+    <div class="col" id="front_page">GLOBAL
+        <br/>
+      <a href="global.html" target="_blank">
+        <img src="/static/images/global.png" width="400">
+      </a>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
+    </div>
 </br>
-<!-- <p>Project 3 - Wild Things Team</p> -->
-</div>
-<script src="/static/js/js-using-web-api.js"></script>
-<!-- <script src="/static/json/GLOBAL.json"></script> -->
-<!-- /<script src="/app.py"></script> -->
-</body>
+<p>Project 3 - Wild Things Team</p>
+  </body>
 </html>

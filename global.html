@@ -19,9 +19,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/css/style.css" />
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+     <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
@@ -67,9 +67,16 @@ p {
 .graphs {
   color: white;
 }
+.col-centered{
+  float:none;
+  margin: 0 auto;
+}
+#bubble{
+ text-align: center;
+}
     </style>
   </head>
-<body class="helvetica">
+<body>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <img src="{{url_for('static', filename = 'images/logo1.png')}}" alt="Logo" style="width: 70px" />
@@ -108,29 +115,119 @@ p {
     <br />
     <br />
     <br/>
-    <h1 class="graphs">GLOBAL INFORMATION</h1>
+    <h1 class="graphs">GLOBAL</h1>
     <h3></h3>
     <br />
     <br />
     <div class="container" id="main">
       <br />
       <br />
-      <h2></h2>
-      <div id="my-chart">
+      <div class="row">
+        <!-- <div class="col-md-2">
+          <div class="well">
+            <h5> UFO SHAPE:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)">
+              <option value="Chevron"> Chevron</option>
+              <option value="Circle"> Circle</option>
+              <option value="Fireball"> Fireball</option>
+              <option value="Light"> Light</option>
+              <option value="Rectangle"> Rectangle</option>
+              <option value="Sphere"> Sphere</option>
+              <option value="Triangle"> Triangle</option>
+              <option value="Unknown"> Unknown</option>
+            </select>
+          </div> -->
+        </div>
+        <div class="col-md-5 col-centered">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div id="bar"></br></br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          </div>
+        </div>
+        <!-- <br/>
+        <br/> -->
       </div>
+      <!-- <div id="map"> -->
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <!-- <div class="row">
+        <div class="col-md-12 col-centered">
+          <div id="bubble"> PLACEHOLDER FOR BUBBLE CHART</div>
+        </div>
+      </div>
+      <br/>
+      <br/>
+    </div> -->
+      <!-- <br />
       <br />
       <br />
-      <br />
-      <br />
+      <br /> -->
     </div>
-    <br/>
-    <br/>
-</div>
 </br>
 <!-- <p>Project 3 - Wild Things Team</p> -->
-</div>
-<script src="/static/js/js-using-web-api.js"></script>
+<div id="map" class="vh-100 vw-100 bg-near-white"></div>
+<script src="/static/js/global.js"></script>
 <!-- <script src="/static/json/GLOBAL.json"></script> -->
-<!-- /<script src="/app.py"></script> -->
-</body>
+<script>
+    var map = L.map('map', {
+           center: [39.8, -98.3], // Initial map center
+           zoom: 5, // Initial zoom level
+           attriutionControl: false,
+         })
+         // Add zoom in/out buttons to the top-right
+         L.control.zoom({position: 'topright'}).addTo(map)
+         // Add baselayer
+         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+           subdomains: 'abcd',
+           maxZoom: 19
+         }).addTo(map)
+         // Add geographical labels
+         var labels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+           subdomains: 'abcd',
+           maxZoom: 19,
+           pane: 'shadowPane'  // always display on top
+         }).addTo(map)
+         // Read data from CSV file
+         $.get("/static/Data/coordinates.csv", function(csvString) {
+        var data = Papa.parse(csvString.trim()).data.filter(
+          function(row) { return row.length === 2 }
+        ).map(function(a) {
+          return [ parseFloat(a[0]), parseFloat(a[1]) ]
+        })
+        // Add all points into a heat layer
+        var heat = L.heatLayer(data, {
+          radius: 15,
+          minOpacity: 0.50,
+          gradient: {0.4: 'blue', 0.55: 'lime', 1: 'red'}
+        })
+        // Add the heatlayer to the map
+        heat.addTo(map)
+      })
+    // Add custom attribution
+    L.control.attribution({
+      prefix: '<a href="https://github.com/HandsOnDataViz/leaflet-heatmap">View data and code</a> \
+        by <a href="https://handsondataviz.org" target="_blank">HandsOnDataViz</a>'
+    }).addTo(map)
+</script>
 </html>
