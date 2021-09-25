@@ -9,10 +9,15 @@ In order to demonstrate our skills acquired for data cleaning and coding, we cre
 ## **Table of Contents**
 
 - [Data Cleaning](#data-cleaning)
-    - [Sources](#sources)
+- [Sources](#sources)
+- [ERD and SQL Database](#erdandsqldatabase)
+- [HTML, CSS, JavaScript, JSON, Flask](#htmlcssjavascriptjsonflask)
+- [Heatmap](#heatmap)
+- [Troubleshooting](#troubleshooting)
 - [Status](#status)
 - [YouTube Video](#youtube-video)
 - [Team Members](#team-members)
+- [Quotes](#quotes)
 
 ## Data Cleaning
 
@@ -34,13 +39,20 @@ The team reviewed multiple datasets and selected a primary source to work with f
 
 The team then created an ERD for the database:
 
-![ERD](images/ERD_v2.png)
+![ERD](images/Project 3 UFO ERD Final Version 2021-09-18.jpg)
 
-Using PostgreSQL, several queries were created including:
+Using PostgreSQL, several queries were created:
 
 1. Sightings per country
 2. Top 20 states in the US with the most sightings
 3. Top 5 shapes per country
+4. Top 20 provinces outside the US with the most sightings
+5. Sightings per decade
+6. Total global sightings per month
+
+![decade query](images/by_decade_query.png)
+
+![month query](images/by_month_query.png)
 
 ## HTML, CSS, JavaScript, JSON, Flask
 
@@ -64,6 +76,12 @@ Using Leaflet, a map with markers and a heatmap was created to show locations of
 NOTE: The team learned that the 66+K data points were too many to actually run and so an assessment was completed to balance the abundance of data and the viewer experience.  The end result was to use 1500 sightings to map.
 
 ![map](images....)
+
+## Troubleshooting
+
+- This project was the first opportunity for the team to render data from a PostgreSQL database. We learned we needed to use a different syntax to achieve this.
+- We learned the criticality of folder structure and the effects it can have on our code functioning and website display.
+- In order for our code to run properly, we learned that we needed the latest version of the d3 script in the HTML file. 
 
 ## **Status** 
 
