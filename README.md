@@ -25,12 +25,11 @@ In order to demonstrate our skills acquired for data cleaning and coding, we cre
 Upon review with the instructor, determined the best path forward would be to drop the incomplete data which brought the data pool down to 66K+
 - Reset the index of the dataframe to convert to a `csv file` for use in a relational database
 
-
-Jupyter Notebook Sample
-"![pic](images/UFO_Jupternotebook_samples.png)
-"![pic](images/Dependencies.png)
-"![pic](images/Dropping_columns.png)
-"![pic](images/Wordcloud.png)
+Samples
+![pic](images/UFO_Jupternotebook_samples.png)
+![pic](images/Dependencies.png)
+![pic](images/Dropping_columns.png)
+![pic](images/Wordcloud.png)
 
 
 
