@@ -27,8 +27,10 @@ Upon review with the instructor, determined the best path forward would be to dr
 
 
 Samples
-![pic 1](images/UFO_Jupternotebook_samples.png)
-![pic 4](images/Wordcloud.png)
+
+![pic 1](images/Dependencies.png)
+![pic 2](images/Cleaned_files.png)
+![pic 3](images/Wordcloud.png)
 
 
 
