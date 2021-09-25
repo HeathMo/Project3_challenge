@@ -10,6 +10,7 @@ Objective: Obtain, clean, organize, visualize data regarding UFO
 We created a website to help show where ufo sightings have occurred around the world.
 
 
+
 **YouTube Declassified Navy UFO Video**
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/2TumprpOwHY/0.jpg)](https://www.youtube.com/watch?v=2TumprpOwHY)
@@ -19,7 +20,7 @@ We created a website to help show where ufo sightings have occurred around the w
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Q60mSMmhTZU/0.jpg)](https://www.youtube.com/watch?v=Q60mSMmhTZU)
 
 Step 1 
-    identified UFO Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size   
+    Identified UFO Dataset in Kaggle; Aligned with team to focus on only UFO dataset due to data size   
     Established CSV file and loaded on the group repo
     Define Dependecies via jupyter notebook
         Cleaned Data 
@@ -32,8 +33,9 @@ Step 1
             conda install -c conda-forge wordcloud
                 Saved with WordCloud PNG files
          
-           
-           
+      Overview of Jupyter Notebook 
+      "![pic](images/UFO sighting JN.png)
+
 
 ### Team Members
 - [Byron Pineda](https://github.com/byronpineda225)
