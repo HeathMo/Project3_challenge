@@ -23,7 +23,7 @@ In order to demonstrate our skills acquired for data cleaning and coding, we cre
 
 The team obtained data pertaining to UFO sightings in the form of a `csv file` and performed some cleaning activities on it using `jupyter notebook`.  The cleaning steps were as follows:
 1. Defined dependencies and imported the csv
-2. Dropped 2 columns that were determined not to be required: "duration (hours/min" and "date posted"
+2. Dropped 2 columns that were determined not to be required: "duration (hours/min)" and "date posted"
 3. Reviewed the dataset and discovered there were approximately 10K lines of code out of the 80K+ lines of code that were incomplete/insufficient
 4. Assessed the feasibility of performing an API call to populate the missing data and reviewed with the instructor
 5. Upon review with the instructor, determined the best path forward would be to drop the incomplete data which brought the data pool down to 66K+
