@@ -49,8 +49,7 @@ var bar_data = [
 var bar_layout = {
   title: "Global UFO Sightings by Month",
   bargap: 0.05,
-  height: 400,
-  width: 400,
+ 
 };
 Plotly.newPlot("bar", bar_data, bar_layout);
 

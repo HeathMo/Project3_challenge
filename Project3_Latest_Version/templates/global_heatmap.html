@@ -19,20 +19,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/css/style.css" />
-
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
     <link rel="icon" href="/static/image/logo1.png">
-    
     <style>
       body {
   background: url(/static/images/background3.png) no-repeat center center fixed;
@@ -41,11 +36,9 @@
   -o-background-size: cover;
   background-size: cover;
 }
-
 .nav-item {
   font-size: 25px;
 }
-
 .image1 {
   display: block;
   margin-left: auto;
@@ -53,13 +46,11 @@
   width: 20%;
   border-radius: 50%;
 }
-
 .container {
   background-color: lightgrey;
   color: black;
   border-radius: 20px 20px 20px 20px;
 }
-
 h1 {
   text-align: center;
   font-weight: bold;
@@ -68,19 +59,16 @@ h1 {
   color: rgb(185, 169, 169);
   text-shadow: 3px 3px rgb(104, 255, 104);
 }
-
 p {
   text-align: center;
   font-weight: bold;
   color: white;
 }
-
 .graphs {
   color: white;
 }
     </style>
   </head>
-  
 <body class="helvetica">
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div class="container-fluid">
@@ -94,17 +82,17 @@ p {
           <a class="nav-link active" aria-current="page" href="/index.html">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/global_heatmap.html">GLOBAL HEATMAP</a>
+          <a class="nav-link" href="/global_heatmap.html">UFO SUMMARY</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             SIGHTINGS
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/united_states.html">United States(US)🇺🇸</a></li>
+            <li><a class="dropdown-item" href="/united_states.html">United States</a></li>
             <li><a class="dropdown-item" href="/global.html">Global🌎</a></li>
-            <!-- <li><a class="dropdown-item" href="/templates/great_britain.html">Great Britain(GB)🇬🇧</a></li>
-            <li><a class="dropdown-item" href="/templates/australia.html">Australia(AU)🇦🇺</a></li> -->
+            <!-- <li><a class="dropdown-item" href="/templates/great_britain.html">Great Britain(GB):gb:</a></li>
+            <li><a class="dropdown-item" href="/templates/australia.html">Australia(AU):flag-au:</a></li> -->
           </ul>
         </li>
        <li class="nav-item">
@@ -124,10 +112,9 @@ p {
     <h3></h3>
     <br />
     <br />
-    <!-- <div class="container" id="main">
+    <div class="container" id="main">
       <br />
-      <br /> -->
-
+      <br />
       <h2></h2>
       <div id="my-chart">
       </div>
@@ -138,72 +125,12 @@ p {
     </div>
     <br/>
     <br/>
-</div>   
+</div>
 </br>
 <!-- <p>Project 3 - Wild Things Team</p> -->
-<div id="map" class="vh-100 vw-100 bg-near-white"></div>
-      
 </div>
-<script src="/static/js/global.js"></script>
-
-<script src="/static/json/GLOBAL.json"></script>
-<script>
-    var map = L.map('map', {
-           
-           center: [39.8, -98.3], // Initial map center
-           zoom: 5, // Initial zoom level
-           attriutionControl: false,
-           
-         })
-     
-         // Add zoom in/out buttons to the top-right
-         L.control.zoom({position: 'topright'}).addTo(map)
-     
-         // Add baselayer
-         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-           subdomains: 'abcd',
-           maxZoom: 19
-         }).addTo(map)
-     
-         // Add geographical labels 
-         var labels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-           subdomains: 'abcd',
-           maxZoom: 19,
-           pane: 'shadowPane'  // always display on top
-         }).addTo(map)
-     
-         // Read data from CSV file
-         $.get("Project3_2/Data/coordinates.csv", function(csvString) {
-      
-            
-        var data = Papa.parse(csvString.trim()).data.filter(
-          function(row) { return row.length === 2 }
-        ).map(function(a) {
-          return [ parseFloat(a[0]), parseFloat(a[1]) ]
-        })
-
-        // Add all points into a heat layer
-        var heat = L.heatLayer(data, {
-          radius: 15,
-          minOpacity: 0.50,
-          gradient: {0.4: 'blue', 0.55: 'lime', 1: 'red'}
-        })
-
-        // Add the heatlayer to the map
-        heat.addTo(map)
-      })
-
-
-    
-    // Add custom attribution
-    L.control.attribution({
-      prefix: '<a href="https://github.com/HandsOnDataViz/leaflet-heatmap">View data and code</a> \
-        by <a href="https://handsondataviz.org" target="_blank">HandsOnDataViz</a>'
-    }).addTo(map)
-
-</script>
+<script src="/static/js/js-using-web-api.js"></script>
+<!-- <script src="/static/json/GLOBAL.json"></script> -->
 <!-- /<script src="/app.py"></script> -->
 </body>
 </html>
