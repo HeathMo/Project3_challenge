@@ -39,7 +39,7 @@ The team reviewed multiple datasets and selected a primary source to work with f
 
 The team then created an ERD for the database:
 
-![ERD](images/Project 3 UFO ERD Final Version 2021-09-18.jpg)
+![ERD](images/Project_3_UFO_ERD_Final_Version_2021-09-18.jpg)
 
 Using PostgreSQL, several queries were created:
 
