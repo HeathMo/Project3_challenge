@@ -28,7 +28,7 @@ Upon review with the instructor, determined the best path forward would be to dr
 
 Jupyter Notebook Sample
 
-![Sample](images/UFO_sighting_JN.png)
+![Sample](images/UFO_Jupternotebook_samples.png)
 
 
 ### Sources
