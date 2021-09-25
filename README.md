@@ -27,10 +27,10 @@ Upon review with the instructor, determined the best path forward would be to dr
 
 
 Jupyter Notebook Sample
-
-![Sample](images/Dependencies.png)
-![Sample](images/Dropping_columns.png)
-![Sample](images/Wordcloud.png)
+"![Sample](images/UFO_Jupternotebook_samples.png)
+"![Sample](images/Dependencies.png)
+"![Sample](images/Dropping_columns.png)
+"![Sample](images/Wordcloud.png)
 
 
 
