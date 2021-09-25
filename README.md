@@ -31,7 +31,9 @@ Samples
 ![pic 1](images/Dependencies.png)
 
 
+
 ![pic 2](images/Cleaned_files.png)
+
 
 
 ![pic 3](images/Wordcloud.png)
